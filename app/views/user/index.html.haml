@@ -1,15 +1,7 @@
 .wrapper
-  .header
-    .header__content Beers
-    .header__buttons
-      %button{class: "header-button", onclick: "location.href=''"} Beers
-      %button{class: "header-button", onclick: "location.href=''"} My page
-      %button{class: "header-button", onclick: "location.href=''"} Log in
-      %button{class: "header-button", onclick: "location.href=''"} Review
+  = render "header"
   .main-contents
     .reviews
       .reviews__top-rare
       .reviews__latest
-
-
   .footer

@@ -1,7 +1,21 @@
 .main-image{
-    width: 100%;
-    height: calc(100vh - 70px);
-    padding-top: 70px;
-    background-size: cover;
-    background-image: url(top-page.jpg);
+  width: 100%;
+  height: calc(100vh - 70px);
+  padding-top: 70px;
+  background-size: cover;
+  background-image: url(top-page_edit.png);
+  background-color: #444444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__contents{
+
+    &--text{
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
 }

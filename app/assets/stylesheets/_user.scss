@@ -2,51 +2,22 @@
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background-color:#feffdb;
-  
-  .header {
-    background-color: #ffc60b;
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    display: flex;
-    padding: 10px;
-
-    &__content {
-      width: 50%;
-      text-align: 50px;
-      font-size: 30px;
-      font-weight: bold;
-      color: white;
-    }
-    &__buttons{
-      width: 50%;
-      margin: 0 0 0 auto;
-      button.header-button{
-        width: 20%;
-        height: 50px;
-        font-size: 18px;
-        font-weight: bold;
-        background-color: #ffc60b;
-        color: white;
-        border-style: none;
-        // outline: 0;
-      }
-    }
-  }
 
   .main-contents {
     background-color: white;
-    width: 80vw;
+    width: 85vw;
     height: calc(100% - 450px);
     min-height: 500px;
     margin: auto;
+    padding-top: 70px;
     .reviews{
       &__top-rate{
-
+        height: 500px;
+        background-color: #444444;
       }
       &__latest{
-        
+        height: 500px;
+        background-color: grey;
       }
     }
   }

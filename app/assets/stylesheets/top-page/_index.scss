@@ -10,12 +10,24 @@
   align-items: center;
 
   &__contents{
-
+    width: 100%;
+    text-align: center;
     &--text{
       color: white;
-      font-size: 50px;
+      font-size: 80px;
       font-weight: bold;
-      text-align: center;
+    }
+    &--button{
+      button.top-page-button{
+        font-size: 30px;
+        border-radius: 20px;
+        font-weight: bold;
+        background-color: transparent;
+        color: white;
+        padding: 10px 100px;
+        margin-top: 30px;
+        border: white 1px solid;
+      }
     }
   }
 }

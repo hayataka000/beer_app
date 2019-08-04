@@ -3,18 +3,49 @@
   height: 100%;
   min-height: 100vh;
 
+  .banner{
+    height: 400px;
+    width: 100vw;
+    background-size: cover;
+    background-image: url(top-page_edit.png);
+    background-color: #444444;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .search-bar{
+      text-align: center;
+      &__text{
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+      }
+      &__box{
+        width: 100%;
+        &--form{
+          display: flex;
+          input.search{
+            height: 50px;
+            width: 400px;
+            font-size: 20px;
+            border-radius: 10px 0 0 10px;
+          }
+          button.submit{
+            height: 54px;
+            width: 50px;
+            border-radius: 0 10px 10px 0;
+          }
+        }
+      }
+    }
+  }
   .main-contents {
     background-color: white;
     width: 85vw;
-    height: calc(100% - 450px);
+    height: calc(100% - 550px);
     min-height: 500px;
     margin: auto;
-    padding-top: 70px;
     .reviews{
-      &__top-rate{
-        height: 500px;
-        background-color: #444444;
-      }
       &__latest{
         height: 500px;
         background-color: grey;

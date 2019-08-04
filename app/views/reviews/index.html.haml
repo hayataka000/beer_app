@@ -1,9 +1,14 @@
 .wrapper
   = render "header"
+  .banner
+    .search-bar
+      .search-bar__text chug it
+      .search-bar__box
+        .search-bar__box--form
+          %input{type:"text", class: "search"}
+          %button{type:"submit", class: "submit", value: ""}
   .main-contents
     .reviews
       .reviews__top-rate
-        aaaaa
       .reviews__latest
-        eeeee
   .footer

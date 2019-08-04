@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
     .search-bar{
       text-align: center;
       &__text{
@@ -29,11 +30,15 @@
             width: 400px;
             font-size: 20px;
             border-radius: 10px 0 0 10px;
+            outline: 0;
+            padding: 0 5px;
           }
           button.submit{
             height: 54px;
             width: 50px;
             border-radius: 0 10px 10px 0;
+            outline: 0;
+            background-color: #ffc60b;
           }
         }
       }
@@ -45,10 +50,55 @@
     height: calc(100% - 550px);
     min-height: 500px;
     margin: auto;
+    h1.review{
+      font-size: 20px;
+      font-weight: bold;
+      padding: 0 10px;
+    }
     .reviews{
-      &__latest{
-        height: 500px;
-        background-color: grey;
+      margin-bottom: 10px;
+      &__list{
+        height: auto;
+        display: flex;
+        .review{
+          height: 300px;
+          width: 25%;
+          margin: 10px 5px;
+          border: #444444 1px solid;
+          padding: 5px;
+          &__image{
+            border-bottom: #444444 1px solid;
+            height: 70%;
+          }
+          &__brand{
+            border-bottom: #444444 1px solid;
+            height: 10%;
+            position: relative;
+            h2.brand{
+              position: absolute;
+              bottom: 0;
+              font-weight: bold
+            }
+          }
+          &__item-name{
+            border-bottom: #444444 1px solid;
+            height: 10%;
+            position: relative;
+            h2.name{
+              position: absolute;
+              bottom: 0;
+              font-weight: bold
+            }
+          }
+          &__score{
+            height: 10%;
+            position: relative;
+            h2.score{
+              position: absolute;
+              bottom: 0;
+            }
+          }
+        }
       }
     }
   }

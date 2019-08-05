@@ -1,0 +1,37 @@
+.review-detail{
+  padding-top: 70px;
+  width: 85vw;
+  height: calc(100% - 150px);
+  border: #444444 1px solid;
+  margin: auto;
+  
+  &__images{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    &--box{
+      height: 400px;
+      width: 33%;
+      border: #444444 1px solid;
+
+    }
+  }
+  &__contents{
+    height: 25%;
+    &--box{
+
+    }
+    &--textbox{
+
+    }
+  }
+  &__score{
+    height: 50%;
+    &--chart{
+
+    }
+    &--form{
+
+    }
+  }
+}

@@ -1,6 +1,7 @@
 @import "./reset";
 @import "reviews";
-@import "header";
-@import "footer";
+@import "templete/header";
+@import "templete/footer";
 @import "top-page/index";
-@import "show"
+@import "reviews/show";
+@import "search/index";

@@ -63,14 +63,14 @@
           height: 300px;
           width: 25%;
           margin: 10px 5px;
-          border: #444444 1px solid;
           padding: 5px;
+          box-shadow: 0 0 4px gray;
+          border-radius: 15px;
           &__image{
-            border-bottom: #444444 1px solid;
+            border-bottom: grey 1px solid;
             height: 70%;
           }
           &__brand{
-            border-bottom: #444444 1px solid;
             height: 10%;
             position: relative;
             h2.brand{
@@ -80,7 +80,6 @@
             }
           }
           &__item-name{
-            border-bottom: #444444 1px solid;
             height: 10%;
             position: relative;
             h2.name{

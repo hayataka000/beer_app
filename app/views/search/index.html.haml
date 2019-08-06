@@ -1,0 +1,18 @@
+.wapper
+  = render "templete/header"
+  .search-main
+    .search-main__box
+      %input{type:"text", class: "search"}
+      %button{type:"submit", class: "submit", value: ""}
+    .results
+      .results__review
+        .results__review--image
+        .results__review--text
+        .results__review--score
+      .results__review
+      .results__review
+      .results__review
+      .results__review
+      .results__review
+    .pagenation < >
+  = render "templete/footer"

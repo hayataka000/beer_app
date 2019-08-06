@@ -1,5 +1,6 @@
 .review-detail{
   width: 60vw;
+  min-width: 800px;
   height: 100%;
   border: #444444 1px solid;
   margin: auto;
@@ -18,9 +19,9 @@
     }
   }
   &__contents{
-    height: 20vh;
+    height: 100%;
     margin-top: 10px;
-    min-height: 150px;
+    min-height: 20vh;
     &--box{
       height: 15%;
       border-bottom: #444444 1px solid;
@@ -32,8 +33,8 @@
     }
   }
   &__score{
-    height: 40vh;
-    min-height: 400px;
+    height: 100%;
+    min-height: 40vh;
     display: flex;
     margin: 10px 0;
     &--chart{

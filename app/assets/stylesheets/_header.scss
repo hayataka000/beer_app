@@ -5,6 +5,7 @@
   position: fixed;
   display: flex;
   padding: 10px;
+  z-index: 10;
 
   &__content {
     width: 50%;

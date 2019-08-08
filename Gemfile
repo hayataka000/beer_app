@@ -64,6 +64,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'activeadmin'
 gem 'haml-rails'
+gem 'erb2haml'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem "font-awesome-rails"

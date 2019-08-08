@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :search, only: [:index] do
   end
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 end

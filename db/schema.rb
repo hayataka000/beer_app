@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_141633) do
+ActiveRecord::Schema.define(version: 2019_08_08_150822) do
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.string "maker"
+    t.string "text"
+    t.integer "sharpness"
+    t.integer "richness"
+    t.integer "sourness"
+    t.integer "sweetness"
+    t.integer "bitterness"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

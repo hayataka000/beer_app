@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      redirect_to root_path
+      redirect_to reviews_path
     else
       render :new
     end

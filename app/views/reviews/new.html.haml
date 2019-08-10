@@ -2,33 +2,57 @@
   = render "templete/header"
   .review-detail
     = form_with model: @review, url: reviews_path, class: "review-form", method: :post do |f|
-      .review-detail__images
-      .review-detail__score
-        .review-detail__score--forms
+      .review-images
+        = f.file_field :image
+      .review-score
+        .review-score__forms
           .score-box
-            = f.label :name, "商品名", class: "review-label"
-            = f.text_field :name, placeholder: "例) 一番搾り", type: "text", value: "", class:"item-name"
+            %h3.review
+              = f.label :name, "商品名", class: "review-label"
+            = f.text_field :name, placeholder: "例) 一番搾り", type: "text", value: "", style: "width:100%; box-sizing:border-box"
           .score-box
-            = f.label :maker, "メーカー", class: "review-label"
-            = f.text_field :maker, placeholder: "例) キリンビール", type: "text", value: "", class:"item-maker"
+            %h3.review
+              = f.label :maker, "メーカー", class: "review-label"
+            = f.text_field :maker, placeholder: "例) キリンビール", type: "text", value: "", style: "width:100%; box-sizing:border-box"
           .score-box
-            = f.label :text, "レビュー本文", class: "review-label"
-            = f.text_field :text, placeholder: "例) 男は黙ってサッポロビール", type: "text", value: "", class:"item-text"
+            %h3.review
+              = f.label :text, "レビュー本文", class: "review-label"
+            = f.text_area :text, placeholder: "例) 男は黙ってサッポロビール", type: "text", value: "", style: "width:100%; min-height:100px; resize:vertical; box-sizing:border-box", cols: "40", rows: "4"
           .score-box
-            = f.label :sharpness, "キレ", class: "review-label"
-            = f.select :sharpness, [1,2,3,4,5] ,class:"taste-score"
+            %h3.review
+              = f.label :sharpness, "キレ", class: "review-label"
+            = f.range_field :sharpness, min: "0", max: "10", step: "1", value: "5", style: "width:80%; box-sizing:border-box", list: "tickmarks"
+            %datalist{id: "tickmarks"}
+              %option{value: "0", label: "0"}
+              %option{value: "1"}
+              %option{value: "2"}
+              %option{value: "3"}
+              %option{value: "4"}
+              %option{value: "5", label: "5"}
+              %option{value: "6"}
+              %option{value: "7"}
+              %option{value: "8"}
+              %option{value: "9"}
+              %option{value: "10", label: "10"}
           .score-box
-            = f.label :richness, "コク", class: "review-label"
-            = f.select :richness, [1,2,3,4,5] ,class:"taste-score"
           .score-box
-            = f.label :sourness, "酸味", class: "review-label"
-            = f.select :sourness, [1,2,3,4,5] ,class:"taste-score"
+            %h3.review
+              = f.label :richness, "コク", class: "review-label"
+            = f.range_field :richness, min: "0", max: "10", step: "1", value: "5", style: "width:80%; box-sizing:border-box;", list: "tickmarks"
           .score-box
-            = f.label :bitterness, "苦味", class: "review-label"
-            = f.select :bitterness, [1,2,3,4,5] ,class:"taste-score"
+            %h3.review
+              = f.label :sourness, "酸味", class: "review-label"
+            = f.range_field :sourness, min: "0", max: "10", step: "1", value: "5", style: "width:80%; box-sizing:border-box", list: "tickmarks"
           .score-box
-            = f.label :sweetness, "甘み", class: "review-label"
-            = f.select :sweetness, [1,2,3,4,5] ,class:"taste-score"
+            %h3.review
+              = f.label :bitterness, "苦味", class: "review-label"
+            = f.range_field :bitterness, min: "0", max: "10", step: "1", value: "5", style: "width:80%; box-sizing:border-box", list: "tickmarks"
+          .score-box
+            %h3.review
+              = f.label :sweetness, "甘み", class: "review-label"
+            = f.range_field :sweetness, min: "0", max: "10", step: "1", value: "5", style: "width:80%; box-sizing:border-box", list: "tickmarks"
           .submit-btn
-            = f.submit "投稿する", class: "review-submit"
+            = f.submit "投稿", class: "review-submit"
+            .back-btn
+              = link_to "戻る", reviews_path
   = render "templete/footer"

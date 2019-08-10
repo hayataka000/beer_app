@@ -11,21 +11,32 @@
     .reviews
       %h1.review Latest
       .reviews__list
-        .review
-          .review__image
-          .review__brand
-            %h2.brand Kirin
-          .review__item-name
-            %h2.name Lagar beer
-          .review__score
-            %h2.score 5.0
-        .review
-        .review
-        .review
+        - @reviews.each do |review|
+          .review
+            .review__image
+            .review__brand
+              %h2.brand
+                = review.maker
+            .review__item-name
+              %h2.name
+                = review.name
+            .review__score
+              %h2.score
+                = (review.sweetness + review.sourness + review.bitterness + review.sharpness + review.richness)
+                ／50点
       %h1.review Your reviews
       .reviews__list
-        .review
-        .review
-        .review
-        .review
+        - @your_reviews.each do |review|
+          .review
+            .review__image
+            .review__brand
+              %h2.brand
+                = review.maker
+            .review__item-name
+              %h2.name
+                = review.name
+            .review__score
+              %h2.score
+                = (review.sweetness + review.sourness + review.bitterness + review.sharpness + review.richness)
+                ／50点
   = render "templete/footer"

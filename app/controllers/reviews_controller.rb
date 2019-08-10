@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   def index
-
+    @reviews = Review.limit(4).order(" created_at DESC ")
+    @your_reviews = Review.limit(4).order(" created_at DESC ").where(user_id: current_user.id)
   end
 
   def new

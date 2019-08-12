@@ -15,13 +15,23 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
   
   def edit
-    
+    @review = Review.find(params[:id])
+    # if @review.user_id != current_user.id
+    #   redirect_to reviews_path(@review)
+    # end
   end
 
   def update
-  
+    # redirect_to reviews_path if @review.user_id != current_user.id
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to reviews_path
+    else
+      render 'edit'
+    end
   end
 
   private

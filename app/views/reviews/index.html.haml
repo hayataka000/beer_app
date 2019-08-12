@@ -14,6 +14,7 @@
         - @reviews.each do |review|
           .review
             .review__image
+              = image_tag review.image, style: "object-fit:contain; max-width:250px;"
             .review__brand
               %h2.brand
                 = review.maker
@@ -24,19 +25,20 @@
               %h2.score
                 = (review.sweetness + review.sourness + review.bitterness + review.sharpness + review.richness)
                 ／50点
-      %h1.review Your reviews
-      .reviews__list
-        - @your_reviews.each do |review|
-          .review
-            .review__image
-            .review__brand
-              %h2.brand
-                = review.maker
-            .review__item-name
-              %h2.name
-                = review.name
-            .review__score
-              %h2.score
-                = (review.sweetness + review.sourness + review.bitterness + review.sharpness + review.richness)
-                ／50点
+      -# %h1.review Your reviews
+      -# .reviews__list
+      -#   - @your_reviews.each do |review|
+      -#     .review
+      -#       .review__image
+      -#         = image_tag review.image.variant(resize: "250x250")
+      -#       .review__brand
+      -#         %h2.brand
+      -#           = review.maker
+      -#       .review__item-name
+      -#         %h2.name
+      -#           = review.name
+      -#       .review__score
+      -#         %h2.score
+      -#           = (review.sweetness + review.sourness + review.bitterness + review.sharpness + review.richness)
+      -#           ／50点
   = render "templete/footer"

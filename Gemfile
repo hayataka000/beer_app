@@ -69,3 +69,4 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem "font-awesome-rails"
 gem 'pry-rails'
+gem "aws-sdk-s3", require: false

@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     .search-bar{
       text-align: center;
       &__text{
@@ -60,8 +60,9 @@
         height: auto;
         display: flex;
         .review{
-          height: 300px;
+          min-height: 300px;
           width: 25%;
+          min-width: 250px;
           margin: 10px 5px;
           padding: 5px;
           box-shadow: 0 0 4px gray;
@@ -69,6 +70,9 @@
           &__image{
             border-bottom: grey 1px solid;
             height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
           &__brand{
             height: 10%;

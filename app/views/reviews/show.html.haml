@@ -44,7 +44,7 @@
         .submit-btn
           = link_to "編集する", edit_review_path
         .delete-btn
-          = link_to "削除する", reviews_path
+          = link_to "削除する", review_path, method: :delete
         .back-btn
           = link_to "戻る", reviews_path
   = render "templete/footer"

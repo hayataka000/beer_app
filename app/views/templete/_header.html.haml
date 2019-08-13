@@ -1,5 +1,7 @@
 .header
-  .header__content BeerLog
+  .header__content 
+    = link_to reviews_path, target: "_top" do
+      = image_tag 'logo.png', style: "max-height:60px;"
   .header__buttons
     .header-button
       = link_to "Review", new_review_path

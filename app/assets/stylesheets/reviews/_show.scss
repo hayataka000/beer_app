@@ -1,5 +1,6 @@
 .review-detail{
   width: 50vw;
+  min-width: 700px;
   height: 100%;
   min-height: calc(100vh - 170px);
   margin: auto;
@@ -32,9 +33,9 @@
       display: flex;
       .score-chart{
         width: 80%;
-        border: #444444 1px solid;
         margin-right: 5px;
         padding: 5px;
+        text-align: center;
       }
       .score-boxes{
         width: 20%;

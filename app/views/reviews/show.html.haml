@@ -19,6 +19,9 @@
             = @review.text
       .review-score
         .score-chart
+          %canvas(id="myChart2" width="400" height="400" style="background-color: #000000;")
+            %script(src="path/to/chartjs/dist/Chart.js")
+
         .score-boxes
           .score-box
             %h3.review キレ

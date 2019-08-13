@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    @scores = [@review.sharpness, @review.richness, @review.bitterness, @review.sourness, @review.sweetness]
   end
 
   def index

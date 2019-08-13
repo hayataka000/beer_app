@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def index
     @reviews = Review.limit(4).order(" created_at DESC ")
     # @your_reviews = Review.limit(4).order(" created_at DESC ").where(user_id: current_user.id)
@@ -16,16 +21,16 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @review = Review.find(params[:id])
-    # if @review.user_id != current_user.id
-    #   redirect_to reviews_path(@review)
-    # end
+    if @review.user_id != current_user.id
+      redirect_to reviews_path(@review)
+    end
   end
 
   def update
-    # redirect_to reviews_path if @review.user_id != current_user.id
+    redirect_to reviews_path if @review.user_id != current_user.id
     @review = Review.find(params[:id])
     if @review.update(review_params)
       redirect_to reviews_path

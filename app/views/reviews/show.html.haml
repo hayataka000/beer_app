@@ -1,0 +1,50 @@
+.wrapper
+  = render "templete/header"
+  .review-detail
+    .review-detail__box
+      .review-images
+        = image_tag @review.image, style: "object-fit:contain; max-width:400px;"
+      .review-description
+        .score-box
+          %h3.review 商品名
+          .score-box__text
+            = @review.name
+        .score-box
+          %h3.review メーカー
+          .score-box__text
+            = @review.maker
+        .score-box
+          %h3.review レビュー本文
+          .score-box__text
+            = @review.text
+      .review-score
+        .score-chart
+        .score-boxes
+          .score-box
+            %h3.review キレ
+            .score-box__text
+              = @review.sharpness
+          .score-box
+            %h3.review コク
+            .score-box__text
+              = @review.richness
+          .score-box
+            %h3.review 酸味
+            .score-box__text
+              = @review.sourness
+          .score-box
+            %h3.review 苦み
+            .score-box__text
+              = @review.bitterness
+          .score-box
+            %h3.review 甘み
+            .score-box__text
+              = @review.sweetness
+      .buttons
+        .submit-btn
+          = link_to "編集する", edit_review_path
+        .delete-btn
+          = link_to "削除する", reviews_path
+        .back-btn
+          = link_to "戻る", reviews_path
+  = render "templete/footer"

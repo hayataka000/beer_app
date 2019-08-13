@@ -14,7 +14,7 @@
         - @reviews.each do |review|
           .review
             .review__image
-              = image_tag review.image, style: "object-fit:contain; max-width:250px;"
+              = image_tag review.image, style: "object-fit:contain; max-width:250px; width:auto;"
             .review__brand
               %h2.brand
                 = review.maker

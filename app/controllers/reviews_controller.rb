@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
-    @score = ["#{@review.sharpness}", "#{@review.richness}", "#{@review.sourness}", "#{@review.bitterness}", "#{@review.sweetness}"]
+    gon.score = ["#{@review.sharpness}", "#{@review.richness}", "#{@review.sourness}", "#{@review.bitterness}", "#{@review.sweetness}"]
   end
 
   def index

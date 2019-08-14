@@ -19,9 +19,38 @@
             = @review.text
       .review-score
         .score-chart
-          %canvas(id="myChart2" width="400" height="400" style="background-color: #000000;")
-            %script(src="path/to/chartjs/dist/Chart.js")
-
+          %script{:crossorigin => "anonymous", :integrity => "sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=", :src => "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"}
+          %canvas(id="myChart" width="400" height="400")
+          :javascript
+              var ctx = document.getElementById("myChart");
+              var myChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                  labels: ["キレ", "コク", "酸味", "苦味", "甘味"],
+                  datasets: [{
+                    data: raw @score,
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+                    borderColor: ['rgba(255,99,132,1)'],
+                    borderWidth: 1
+                    }]
+                  },
+                options: {
+                  responsive: true,
+                  legend: {
+                    display: false
+                  },
+                  scale: {
+                    pointLabels: {
+                      fontSize: 15
+                    },
+                    ticks: {
+                      stepSize: 1,
+                      max: 10,
+                      beginAtZero: true
+                    }
+                  }
+                }
+              });
         .score-boxes
           .score-box
             %h3.review キレ
@@ -36,11 +65,11 @@
             .score-box__text
               = @review.sourness
           .score-box
-            %h3.review 苦み
+            %h3.review 苦味
             .score-box__text
               = @review.bitterness
           .score-box
-            %h3.review 甘み
+            %h3.review 甘味
             .score-box__text
               = @review.sweetness
       .buttons

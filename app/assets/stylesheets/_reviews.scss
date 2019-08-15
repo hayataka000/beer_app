@@ -4,7 +4,7 @@
   min-height: 100vh;
 
   .banner{
-    height: 400px;
+    height: 300px;
     background-size: cover;
     background-image: url(top-page_edit.png);
     background-color: #444444;
@@ -45,60 +45,58 @@
   }
   .main-contents {
     background-color: white;
-    width: 85vw;
-    height: calc(100% - 550px);
-    min-height: 500px;
     margin: auto;
+    width: 85vw;
     h1.review{
       font-size: 20px;
       font-weight: bold;
       padding: 0 10px;
     }
-    .reviews{
-      margin-bottom: 10px;
-      &__list{
-        height: auto;
-        display: flex;
-        .review{
-          min-height: 300px;
-          width: 25%;
-          min-width: 250px;
-          margin: 10px 5px;
-          padding: 5px;
-          box-shadow: 0 0 4px gray;
-          border-radius: 15px;
-          &__image{
-            border-bottom: grey 1px solid;
-            height: 70%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+  }
+  .reviews{
+    margin-bottom: 10px;
+    &__list{
+      height: auto;
+      display: flex;
+      .review{
+        min-height: 300px;
+        width: 25%;
+        min-width: 250px;
+        margin: 10px 5px;
+        padding: 5px;
+        box-shadow: 0 0 4px gray;
+        border-radius: 15px;
+        &__image{
+          border-bottom: grey 1px solid;
+          height: 70%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        &__brand{
+          height: 10%;
+          position: relative;
+          h2.brand{
+            position: absolute;
+            bottom: 0;
+            font-weight: bold
           }
-          &__brand{
-            height: 10%;
-            position: relative;
-            h2.brand{
-              position: absolute;
-              bottom: 0;
-              font-weight: bold
-            }
+        }
+        &__item-name{
+          height: 10%;
+          position: relative;
+          h2.name{
+            position: absolute;
+            bottom: 0;
+            font-weight: bold
           }
-          &__item-name{
-            height: 10%;
-            position: relative;
-            h2.name{
-              position: absolute;
-              bottom: 0;
-              font-weight: bold
-            }
-          }
-          &__score{
-            height: 10%;
-            position: relative;
-            h2.score{
-              position: absolute;
-              bottom: 0;
-            }
+        }
+        &__score{
+          height: 10%;
+          position: relative;
+          h2.score{
+            position: absolute;
+            bottom: 0;
           }
         }
       }

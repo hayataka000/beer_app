@@ -2,12 +2,15 @@
   .header__content 
     = link_to reviews_path, target: "_top" do
       = image_tag 'logo.png', style: "max-height:60px;"
-  .header__buttons
-    .header-button
-      = link_to "Review", new_review_path
-    .header-button
-      = link_to "Sign up", new_user_registration_path
-    .header-button
-      = link_to "Log in", new_user_session_path
-    .header-button
-      = link_to "Log out", destroy_user_session_path, method: :delete
+  - if user_signed_in?
+    .header__buttons
+      .header-button
+        = link_to "Review", new_review_path
+      .header-button
+        = link_to "Log out", destroy_user_session_path, method: :delete
+  - else
+    .header__buttons
+      .header-button
+        = link_to "Sign up", new_user_registration_path
+      .header-button
+        = link_to "Log in", new_user_session_path

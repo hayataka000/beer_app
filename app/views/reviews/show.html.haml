@@ -40,43 +40,47 @@
             .score-box__text
               = @review.sweetness
         .score-chart
-          %script{:crossorigin => "anonymous", :integrity => "sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=", :src => "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"}
           %canvas(id="myChart" width="400" height="400")
-          :javascript
-              var ctx = document.getElementById("myChart");
-              var myChart = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                  labels: ["キレ", "コク", "酸味", "苦味", "甘味"],
-                  datasets: [{
-                    data: gon.score,
-                    backgroundColor: ['rgba(255, 198, 11, 0.2)'],
-                    borderColor: ['rgba(255, 198, 11, 1)'],
-                    borderWidth: 1
-                    }]
-                  },
-                options: {
-                  responsive: true,
-                  legend: {
-                    display: false
-                  },
-                  scale: {
-                    pointLabels: {
-                      fontSize: 15
-                    },
-                    ticks: {
-                      stepSize: 1,
-                      max: 10,
-                      beginAtZero: true
-                    }
-                  }
-                }
-              });
       .buttons
-        .submit-btn
-          = link_to "編集する", edit_review_path
-        .delete-btn
-          = link_to "削除する", review_path, method: :delete
-        .back-btn
-          = link_to "戻る", reviews_path
+        - if user_signed_in?
+          .submit-btn
+            = link_to "編集する", edit_review_path
+          .delete-btn
+            = link_to "削除する", review_path, method: :delete
+          .back-btn
+            = link_to "戻る", reviews_path
+        - else
+          .back-btn
+            = link_to "戻る", reviews_path
   = render "templete/footer"
+  %script{:crossorigin => "anonymous", :integrity => "sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=", :src => "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"}
+  :javascript
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ["キレ", "コク", "酸味", "苦味", "甘味"],
+          datasets: [{
+            data: gon.score,
+            backgroundColor: ['rgba(255, 198, 11, 0.2)'],
+            borderColor: ['rgba(255, 198, 11, 1)'],
+            borderWidth: 1
+            }]
+          },
+        options: {
+          responsive: true,
+          legend: {
+            display: false
+          },
+          scale: {
+            pointLabels: {
+              fontSize: 15
+            },
+            ticks: {
+              stepSize: 1,
+              max: 10,
+              beginAtZero: true
+            }
+          }
+        }
+      });

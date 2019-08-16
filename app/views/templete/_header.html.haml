@@ -4,13 +4,15 @@
       = image_tag 'logo.png', style: "max-height:60px;"
   %ul.menu
     %li.menu__single
-      %a.init-bottom{:href => "#"} Menu
+      %a.init-bottom{:href => "#"} メニュー
       %ul.menu__second-level
-        %li
-          = link_to "Review", new_review_path
-        %li
-          = link_to "Log out", destroy_user_session_path, method: :delete
-        %li
-          = link_to "Sign up", new_user_registration_path
-        %li
-          = link_to "Log in", new_user_session_path
+        - if user_signed_in?
+          %li
+            = link_to "投稿する", new_review_path
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to "新規登録", new_user_registration_path
+          %li
+            = link_to "ログイン", new_user_session_path

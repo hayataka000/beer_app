@@ -3,7 +3,7 @@
   .review-detail
     = form_with model: @review, url: reviews_path, class: "review-form", method: :post do |f|
       .review-images
-        = f.file_field :image
+      = f.file_field :image, class:"file"
       .review-score
         .review-score__forms
           .score-box

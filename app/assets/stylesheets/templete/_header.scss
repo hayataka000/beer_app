@@ -11,9 +11,8 @@ a, a:visited {
   display: flex;
   padding: 10px;
   z-index: 10;
-
   &__content {
-    width: 50%;
+    width: 90%;
     text-align: 50px;
     font-size: 30px;
     font-weight: bold;
@@ -40,4 +39,77 @@ a, a:visited {
       border-style: none;
     }
   }
+}
+
+#dropmenu {
+position: relative;
+list-style-type: none;
+width: 100px;
+height: 60px;
+padding: 0;
+}
+#dropmenu li {
+width: 18%;
+float: left;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+#dropmenu li a {
+display: block;
+height: 60px;
+width: 100px;
+margin: 0 auto;
+color: #444444;
+font-size: 18px;
+font-family: 'limelight',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+font-weight: bold;
+text-decoration: none;
+line-height: 50px;
+}
+#dropmenu li ul {
+position: absolute;
+top: 100%;
+list-style: none;
+margin: 0;
+border-radius: 0 0 3px 3px;
+}
+#dropmenu li ul li{
+overflow: hidden;
+width: 100px;
+height: 0;
+color: #000;
+-moz-transition: .2s;
+-webkit-transition: .2s;
+-o-transition: .2s;
+-ms-transition: .2s;
+transition: .2s;
+}
+#dropmenu li ul li a{
+background: #E8F6FF;
+font-size: 12px;
+font-family: 'limelight',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+font-weight: bold;
+}
+#dropmenu li:hover > a{
+background: #CFE6F7;
+color: #007CC3;
+}
+#dropmenu > li:hover > a{
+border-radius: 3px 3px 0 0;
+}
+#dropmenu li:hover ul li{
+overflow: visible;
+height: 29px;
+border-top: 1px solid #007CC3;
+
+}
+#dropmenu li:hover ul li:first-child{
+border-top: 0;
+}
+#dropmenu li:hover ul li:last-child{
+border-bottom: 0;
+}
+#dropmenu li:hover ul li:last-child a{
+border-radius: 0 0 3px 3px;
 }

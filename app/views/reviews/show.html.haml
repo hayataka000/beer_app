@@ -42,7 +42,7 @@
         .score-chart
           %canvas(id="myChart" width="400" height="400")
       .buttons
-        - if user_signed_in?
+        - if @review.user_id == current_user.id
           .submit-btn
             = link_to "編集する", edit_review_path
           .delete-btn

@@ -2,10 +2,10 @@
   .header__content 
     = link_to reviews_path, target: "_top" do
       = image_tag 'logo.png', style: "max-height:60px;"
-  %ul{id:"dropmenu",style:"clear:both;"}
-    %li
-      %a Menu
-      %ul
+  %ul.menu
+    %li.menu__single
+      %a.init-bottom{:href => "#"} Menu
+      %ul.menu__second-level
         %li
           = link_to "Review", new_review_path
         %li

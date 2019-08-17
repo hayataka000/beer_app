@@ -7,7 +7,10 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.limit(4).order(" created_at DESC ")
-    # @your_reviews = Review.limit(4).order(" created_at DESC ").where(user_id: current_user.id)
+    # 検索オブジェクト
+    @search = Review.ransack(params[:q])
+    # 検索結果
+    @search_result = @search.result
   end
 
   def new

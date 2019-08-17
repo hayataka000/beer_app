@@ -2,17 +2,22 @@
   = render "templete/header"
   .search-main
     .search-main__box
-      %input{type:"text", class: "search"}
-      %button{type:"submit", class: "submit", value: ""}
+      = search_form_for @search, url: search_index_path do |f|
+        = f.text_field :name_cont ,placeholder: '検索するテキストを入力...'
+        = f.submit ("検索") , class: 'search-btn'
     .results
-      .results__review
-        .results__review--image
-        .results__review--text
-        .results__review--score
-      .results__review
-      .results__review
-      .results__review
-      .results__review
-      .results__review
-    .pagenation < >
+      - @search_result.each do |review|
+        .results__review
+          .results__review--image
+            = link_to review_path(review.id) do
+              = image_tag review.image, style: "object-fit:contain;max-width:100px; width:auto;"
+          .results__review--text
+            %h2.brand
+              = review.maker
+            %h2.name
+              = review.name
+            %h2.score
+              = (review.sweetness + review.sourness + review.bitterness + review.sharpness + review.richness)
+              ／50点
+    .pagenation
   = render "templete/footer"

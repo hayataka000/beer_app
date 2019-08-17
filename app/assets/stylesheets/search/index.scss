@@ -7,12 +7,12 @@
   min-height: calc(100vh - 170px);
   margin: auto;
   padding: 80px 10px 5px 10px;
-  &__box{
+  form#review_search.review_search{
     width: 100%;
     display: flex;
     margin: 3rem 0;
     justify-content: center;
-    input.search{
+    input#q_name_cont{
       height: 50px;
       width: 400px;
       font-size: 20px;
@@ -20,7 +20,7 @@
       outline: 0;
       padding: 0 5px;
     }
-    button.submit{
+    input.search-btn{
       height: 54px;
       width: 50px;
       border-radius: 0 20px 20px 0;

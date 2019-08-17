@@ -22,9 +22,9 @@
       }
       &__box{
         width: 100%;
-        &--form{
+        form#review_search.review_search{
           display: flex;
-          input.search{
+          input#q_name_cont{
             height: 50px;
             width: 400px;
             font-size: 20px;
@@ -32,7 +32,7 @@
             outline: 0;
             padding: 0 5px;
           }
-          button.submit{
+          input.search-btn{
             height: 54px;
             width: 50px;
             border-radius: 0 20px 20px 0;

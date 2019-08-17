@@ -1,7 +1,7 @@
 .wrapper
   = render "templete/header"
   .review-detail
-    = form_with model: @review, url: reviews_path, class: "review-form", method: :patch do |f|
+    = form_with model: @review, url: review_path, class: "review-form", method: :patch do |f|
       .review-images
       = f.file_field :image, class:"file"
       .review-score
@@ -60,15 +60,15 @@
             .back-btn
               = link_to "戻る", reviews_path
   = render "templete/footer"
-:javascript
-  var elem = document.getElementsByClassName('range');
-    var rangeValue = function (elem, target) {
-      return function(evt){
-      target.innerHTML = elem.value;
+  :javascript
+    var elem = document.getElementsByClassName('range');
+      var rangeValue = function (elem, target) {
+        return function(evt){
+        target.innerHTML = elem.value;
+        }
       }
+    for(var i = 0, max = elem.length; i < max; i++){
+      bar = elem[i].getElementsByTagName('input')[0];
+      target = elem[i].getElementsByTagName('span')[0];
+      bar.addEventListener('input', rangeValue(bar, target));
     }
-  for(var i = 0, max = elem.length; i < max; i++){
-    bar = elem[i].getElementsByTagName('input')[0];
-    target = elem[i].getElementsByTagName('span')[0];
-    bar.addEventListener('input', rangeValue(bar, target));
-  }

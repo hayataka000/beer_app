@@ -3,7 +3,7 @@
   .search-main
     .search-main__box
       = search_form_for @search, url: search_index_path do |f|
-        = f.text_field :name_cont ,placeholder: '検索するテキストを入力...'
+        = f.text_field :name_or_maker_or_text_cont, placeholder: '検索するビールを入力...'
         = f.submit ("検索") , class: 'search-btn'
     .results
       - @search_result.each do |review|

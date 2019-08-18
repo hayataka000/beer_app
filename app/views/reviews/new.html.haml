@@ -3,24 +3,30 @@
   .review-detail
     = form_with model: @review, url: reviews_path, class: "review-form", method: :post do |f|
       .review-images
+      = f.label :image, "画像", class: "review-label"
+      %span.required *
       = f.file_field :image, class:"file"
       .review-score
         .review-score__forms
           .score-box
             %h3.review
               = f.label :name, "商品名", class: "review-label"
+              %span.required *
             = f.text_field :name, placeholder: "例) 一番搾り", type: "text", value: "", style: "width:100%; box-sizing:border-box"
           .score-box
             %h3.review
               = f.label :maker, "メーカー", class: "review-label"
+              %span.required *
             = f.text_field :maker, placeholder: "例) キリンビール", type: "text", value: "", style: "width:100%; box-sizing:border-box"
           .score-box
             %h3.review
               = f.label :text, "レビュー本文", class: "review-label"
+              %span.required *
             = f.text_area :text, placeholder: "例) 男は黙ってサッポロビール", type: "text", value: "", style: "width:100%; min-height:100px; resize:vertical; box-sizing:border-box", cols: "40", rows: "4"
           .range
             %h3.review
               = f.label :sharpness, "キレ", class: "review-label"
+              %span.required *
             = f.range_field :sharpness, min: "0", max: "10", step: "1", value: "5", style: "width:95%; box-sizing:border-box", list: "tickmarks"
             %span#value 5
             %datalist{id: "tickmarks"}
@@ -38,21 +44,25 @@
           .range
             %h3.review
               = f.label :richness, "コク", class: "review-label"
+              %span.required *
             = f.range_field :richness, min: "0", max: "10", step: "1", value: "5", style: "width:95%; box-sizing:border-box;", list: "tickmarks"
             %span#value 5
           .range
             %h3.review
               = f.label :sourness, "酸味", class: "review-label"
+              %span.required *
             = f.range_field :sourness, min: "0", max: "10", step: "1", value: "5", style: "width:95%; box-sizing:border-box", list: "tickmarks"
             %span#value 5
           .range
             %h3.review
               = f.label :bitterness, "苦味", class: "review-label"
+              %span.required *
             = f.range_field :bitterness, min: "0", max: "10", step: "1", value: "5", style: "width:95%; box-sizing:border-box", list: "tickmarks"
             %span#value 5
           .range
             %h3.review
               = f.label :sweetness, "甘み", class: "review-label"
+              %span.required *
             = f.range_field :sweetness, min: "0", max: "10", step: "1", value: "5", style: "width:95%; box-sizing:border-box", list: "tickmarks"
             %span#value 5
           .submit-btn

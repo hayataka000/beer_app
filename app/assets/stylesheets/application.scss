@@ -9,3 +9,7 @@
 @import "devise/sign-in";
 @import "swiper.min.scss";
 @import "flash";
+
+span.required{
+  color: red;
+}

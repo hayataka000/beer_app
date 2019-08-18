@@ -6,4 +6,12 @@
         %p aaa
         %p bbb
       .main-image__contents--button
-        %button{class: "top-page-button", onclick: "location.href='reviews'"} ENTER
+        %ul
+          - if user_signed_in?
+            %li
+              = link_to "ENTER", reviews_path
+          - else
+            %li
+              = link_to "ENTER", reviews_path
+            %li
+              = link_to "新規登録", new_user_registration_path

@@ -9,14 +9,17 @@
       - @search_result.each do |review|
         .results__review
           .results__review--image
-            = link_to review_path(review.id) do
+            = link_to review_path(review.id) , data: {"turbolinks" => false}do
               = image_tag review.image, style: "object-fit:contain;max-width:100px; width:auto;"
           .results__review--text
-            %h2.brand
+            %h2.brand{style:"display:flex;"}
+              %p メーカー：
               = review.maker
-            %h2.name
+            %h2.name{style:"display:flex;"}
+              %p 製品名：
               = review.name
-            %h2.score
+            %h2.score{style:"display:flex;"}
+              %p 総合点：
               = (review.sweetness + review.sourness + review.bitterness + review.sharpness + review.richness)
               ／50点
     .pagenation

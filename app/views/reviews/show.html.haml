@@ -2,6 +2,14 @@
   = render "templete/header"
   .review-detail
     .review-detail__box
+      .review-info
+        %ul
+          %li.daytime{style:"display:flex;"}
+            %p 投稿日：
+            = @review.created_at.strftime("%Y/%m/%d %H:%M")
+          %li.nickname{style:"display:flex;"}
+            %p 投稿者：
+            = @review.user.nickname
       .review-images
         = image_tag @review.image, style: "object-fit:contain; max-width:400px;"
       .review-description
@@ -42,13 +50,17 @@
         .score-chart
           %canvas(id="myChart" width="400" height="400")
       .buttons
-        - if @review.user_id == current_user.id
-          .submit-btn
-            = link_to "編集する", edit_review_path
-          .delete-btn
-            = link_to "削除する", review_path, method: :delete
-          .back-btn
-            = link_to "戻る", reviews_path
+        - if user_signed_in?
+          - if @review.user_id == current_user.id
+            .submit-btn
+              = link_to "編集する", edit_review_path
+            .delete-btn
+              = link_to "削除する", review_path, method: :delete
+            .back-btn
+              = link_to "戻る", reviews_path
+          - else
+            .back-btn
+              = link_to "戻る", reviews_path
         - else
           .back-btn
             = link_to "戻る", reviews_path

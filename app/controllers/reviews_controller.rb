@@ -7,9 +7,12 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.limit(4).order(" created_at DESC ")
-    # 検索オブジェクト
+    # @your_reviews = Review.limit(4).order(" created_at DESC ").where(user_id: current_user.id)
+    # @highest_reviews Review.limit(4).order(" sweetness + sourness + bitterness + sharpness + richness ASC ")
+    # a = [:sweetness, :sourness, :bitterness, :sharpness, :richness]
+    # @total = a.sum
+
     @search = Review.ransack(params[:q])
-    # 検索結果
     @search_result = @search.result
   end
 

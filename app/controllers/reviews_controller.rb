@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action :set_review , only: [:edit,:update,:destroy,:show]
+  skip_before_action :authenticate_user!, only: [:show,:index]
 
   def show
-    @review = Review.find(params[:id])
     gon.score = ["#{@review.sharpness}", "#{@review.richness}", "#{@review.sourness}", "#{@review.bitterness}", "#{@review.sweetness}"]
   end
 
@@ -25,20 +26,17 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to reviews_path
     else
-      flash.now[:alert] = 'レビュー投稿に失敗しました'
       render :new
     end
   end
 
   def edit
-    @review = Review.find(params[:id])
     if @review.user_id != current_user.id
       redirect_to reviews_path(@review)
     end
   end
 
   def update
-    @review = Review.find(params[:id])
     redirect_to reviews_path if @review.user_id != current_user.id
     if @review.update(review_params)
       redirect_to reviews_path
@@ -48,7 +46,6 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
     if @review.user_id == current_user.id
       @review.destroy
       redirect_to reviews_path
@@ -56,6 +53,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
 
   def review_params
     params.require(:review).permit(:name, :maker, :text, :sharpness, :richness, :sourness, :bitterness, :sweetness, :user_id, :image).merge(user_id: current_user.id)

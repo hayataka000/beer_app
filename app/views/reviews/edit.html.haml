@@ -2,6 +2,7 @@
   = render "templete/header"
   .review-detail
     = form_with model: @review, url: review_path, class: "review-form", method: :patch do |f|
+      = render 'layouts/error', model: f.object
       .review-images
       = f.label :image, "画像", class: "review-label"
       %span.required *

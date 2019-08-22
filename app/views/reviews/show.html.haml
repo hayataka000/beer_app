@@ -4,6 +4,8 @@
     .review-detail__box
       .review-info
         %ul
+          %li
+            %a.twitter-share-button{"data-show-count" => "false", :href => "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
           %li.daytime{style:"display:flex;"}
             %p 投稿日：
             = @review.created_at.strftime("%Y/%m/%d %H:%M")
@@ -66,6 +68,7 @@
             = link_to "戻る", reviews_path
   = render "templete/footer"
   %script{:crossorigin => "anonymous", :integrity => "sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=", :src => "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"}
+  %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
   :javascript
       var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
